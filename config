@@ -1,0 +1,3 @@
+GAME_DATA_DIR=$(pwd)/data/game
+GAME_UID=845
+GAME_GID=845
