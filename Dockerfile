@@ -20,7 +20,7 @@ FROM box64-builder AS box64-builder-rpi5
 
 ENV OPTIONS="-D RPI5ARM64=1 -D CMAKE_BUILD_TYPE=RelWithDebInfo"
 
-RUN --mount=target=/build/build,type=cache \
+RUN --mount=target=/build/build,type=cache,sharing=locked \
   cd build \
   && cmake .. $OPTIONS \
   && make -j$(nproc) \
