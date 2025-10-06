@@ -1,8 +1,8 @@
-version: "2"
-
 services:
   factorio:
-    image: factoriotools/factorio
+    build:
+      context: .
+      dockerfile: Dockerfile
     network_mode: host
     volumes:
       - /opt/factorio:/factorio
