@@ -32,4 +32,7 @@ FROM factoriotools/factorio AS factorio
 
 FROM factorio AS factorio-rpi5
 
+ENV MESA_GL_VERSION_OVERRIDE=3.2
+ENV BOX64_DYNAREC_STRONGMEM=1
+
 COPY --from=box64-builder-rpi5 /artifacts/box64 /bin/
