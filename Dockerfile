@@ -28,6 +28,8 @@ RUN --mount=target=/build/build,type=cache \
   && mkdir -p /artifacts \
   && cp box64 /artifacts
 
-FROM factoriotools/factorio AS factorio-rpi5
+FROM factoriotools/factorio AS factorio
+
+FROM factorio AS factorio-rpi5
 
 COPY --from=box64-builder-rpi5 /artifacts/box64 /bin/

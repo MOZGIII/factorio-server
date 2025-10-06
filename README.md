@@ -10,3 +10,13 @@ bin/run
 ```
 
 Optionally provide environment variables via `.env` file.
+
+## Container variants
+
+Set the `CONTAINER_VARIANT` env var to one of the targets from `Dockerfile`
+(via `.env` file).
+
+Choose from:
+
+- `factorio`
+- `factorio-rpi5`
