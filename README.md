@@ -6,7 +6,7 @@ Clone the repo, then `cd` into it; then do:
 
 ```shell
 bin/install-docker
-bin/run
+bin/run -d
 ```
 
 Optionally provide environment variables via `.env` file.
