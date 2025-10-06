@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+
+SERVER="${1?Specify user@host as the first argument}"
+shift
+
+REMOTE_PATH="${REMOTE_PATH:-"/opt/factorio"}"
+LOCAL_DIR="${LOCAL_DIR:-"/opt/"}"
+
+sudo -E rsync -pva "${SERVER}:${REMOTE_PATH}" "$LOCAL_DIR" "$@"
