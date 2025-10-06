@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  factorio:
+    image: factoriotools/factorio
+    network_mode: host
+    volumes:
+      - /opt/factorio:/factorio
+    working_dir: /factorio
+    init: true
+    restart: always
+    env_file:
+      - path: config
+        required: true
+      - path: .env
+        required: false
