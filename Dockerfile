@@ -1,4 +1,6 @@
-FROM debian:stable-slim AS box64-builder
+FROM factoriotools/factorio AS factorio
+
+FROM factorio AS box64-builder
 
 RUN \
   --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
@@ -27,8 +29,6 @@ RUN --mount=target=/build/build,type=cache,sharing=locked \
   && ls -la \
   && mkdir -p /artifacts \
   && cp box64 /artifacts
-
-FROM factoriotools/factorio AS factorio
 
 FROM factorio AS factorio-rpi5
 
